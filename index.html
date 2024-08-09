@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <style src="./main.js" defer></style>
+    <script src="./main.js" defer></script>
     <link rel="icon" href="./list.png" />
     <link
       rel="stylesheet"
@@ -23,28 +23,57 @@
       </div>
 
       <div class="input">
-        <input type="text" />
-        <button class="save">
+        <input
+          class="inputtask"
+          type="text"
+          maxlength="30px"
+          placeholder="add your task"
+        />
+        <button class="addbtn">
           <span class="material-symbols-outlined icons" id="add">
             add_task
           </span>
         </button>
       </div>
 
-      <div class="items">
-        <p></p>
-        <button class="check">
-          <span class="material-symbols-outlined" id="check">
-            radio_button_unchecked
-          </span>
-        </button>
-        <button class="edit">
-          <span class="material-symbols-outlined" id="edit"> edit </span>
-        </button>
-        <button class="delete">
-          <span class="material-symbols-outlined" id="delete"> delete </span>
-        </button>
-      </div>
+      <ul class="items">
+        <li>
+          <div class="task">Task 1</div>
+          <div class="icons">
+            <button class="checkbtn">
+              <span class="material-symbols-outlined" id="check">
+                radio_button_unchecked
+              </span>
+            </button>
+            <button class="editbtn">
+              <span class="material-symbols-outlined" id="edit"> edit </span>
+            </button>
+            <button class="removebtn">
+              <span class="material-symbols-outlined" id="delete">
+                delete
+              </span>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="task">Task 2</div>
+          <div class="icons">
+            <button class="checkbtn">
+              <span class="material-symbols-outlined" id="check">
+                radio_button_unchecked
+              </span>
+            </button>
+            <button class="editbtn">
+              <span class="material-symbols-outlined" id="edit"> edit </span>
+            </button>
+            <button class="removebtn">
+              <span class="material-symbols-outlined" id="delete">
+                delete
+              </span>
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

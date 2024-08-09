@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
   min-height: 100vh;
   background: linear-gradient(190deg, rgb(175, 132, 200), rgb(37, 86, 126));
   font-family: Arial, Helvetica, sans-serif;
@@ -31,18 +31,19 @@ button {
 #check,
 #delete,
 #edit,
-#receipt {
-  font-size: 60px;
+#receipt,
+#checked {
+  font-size: 40px;
   color: white;
 }
 #add:hover,
 #check:hover,
 #delete:hover,
-#edit:hover {
+#edit:hover,
+#checked:hover {
   transform: translateY(3px);
   color: pink;
   cursor: pointer;
-  /* background-color: black; */
   border-radius: 100%;
   text-shadow: 1px 2px 1px black;
 }
@@ -52,15 +53,46 @@ button {
   justify-content: center;
   text-align: center;
   margin-bottom: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 30px 20px;
+  border-radius: 20px;
 }
 
 .input input {
   height: 50px;
-  width: 500px;
-  text-align: center;
+  width: 100%;
   background: transparent;
   border: none;
   font-size: 50px;
   border-bottom: 2px solid white;
   margin-right: 20px;
+}
+
+.inputtask {
+  color: white;
+}
+
+.input input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(244, 231, 251, 0.3);
+}
+
+ul {
+  min-width: 60%;
+  font-size: 40px;
+  list-style: none;
+  user-select: none;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li.checked {
+  color: rgba(255, 255, 255, 0.2);
+  text-decoration: line-through;
 }
