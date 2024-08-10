@@ -91,8 +91,3 @@ ul li {
   display: flex;
   justify-content: space-between;
 }
-
-ul li.checked {
-  color: rgba(255, 255, 255, 0.2);
-  text-decoration: line-through;
-}
