@@ -1,25 +1,25 @@
-const add = document.querySelector(".addbtn");
-const inputtask = document.querySelector(".inputtask");
+const addBtn = document.querySelector(".addBtn");
+const inputTask = document.querySelector(".inputTask");
 const items = document.querySelector(".items");
 
 function emptyTask() {
-  inputtask.value = "";
+  inputTask.value = "";
 }
 
 function addTask() {
-  if (inputtask.value === "") {
+  if (inputTask.value === "") {
     alert("Please enter a task");
   } else {
     let li = document.createElement("li");
     li.innerHTML = `
-      <div class="task">${inputtask.value}</div>
+      <div class="task">${inputTask.value}</div>
       <div class="icons">
-        <button class="checkbtn">
+        <button class="checkBtn">
           <span class="material-symbols-outlined" id="check">
             radio_button_unchecked
           </span>
         </button>
-        <button class="removebtn">
+        <button class="removeBtn">
           <span class="material-symbols-outlined" id="delete">
             delete
           </span>
@@ -28,32 +28,32 @@ function addTask() {
     `;
     items.appendChild(li);
 
-    // Add event listeners for the newly added buttons
-    const checkbtn = li.querySelector(".checkbtn");
-    const removebtn = li.querySelector(".removebtn");
+    const checkBtn = li.querySelector(".checkBtn");
+    const removeBtn = li.querySelector(".removeBtn");
 
-    checkbtn.addEventListener("click", function () {
-      checkTask(checkbtn);
+    checkBtn.addEventListener("click", function () {
+      checkTask(checkBtn);
     });
 
-    removebtn.addEventListener("click", function () {
+    removeBtn.addEventListener("click", function () {
       removeTask(li);
     });
   }
   emptyTask();
+  inputTask.focus();
 }
 
-function checkTask(checkbtn) {
-  const icon = checkbtn.querySelector("span");
-  const taskElement = checkbtn.closest("li").querySelector(".task");
+function checkTask(checkBtn) {
+  const icon = checkBtn.querySelector("#check");
+  const taskElement = checkBtn.closest("li").querySelector(".task");
 
-  if (checkbtn.classList.contains("checkedbtn")) {
-    checkbtn.classList.remove("checkedbtn");
+  if (checkBtn.classList.contains("checkedBtn")) {
+    checkBtn.classList.remove("checkedBtn");
     icon.innerHTML = "radio_button_unchecked";
     taskElement.style.color = "";
     taskElement.style.textDecoration = "";
   } else {
-    checkbtn.classList.add("checkedbtn");
+    checkBtn.classList.add("checkedBtn");
     icon.innerHTML = "task_alt";
     taskElement.style.color = "lightgray";
     taskElement.style.textDecoration = "line-through";
@@ -64,6 +64,6 @@ function removeTask(taskElement) {
   taskElement.remove();
 }
 
-add.addEventListener("click", function () {
+addBtn.addEventListener("click", function () {
   addTask();
 });
